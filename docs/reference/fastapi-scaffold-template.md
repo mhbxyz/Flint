@@ -11,7 +11,7 @@ This document defines the generated structure for the v1 FastAPI scaffold profil
 ├── .gitignore
 ├── README.md
 ├── pyproject.toml
-├── pyquick.toml
+├── flint.toml
 ├── src/
 │   └── <project_package>/
 │       ├── __init__.py
@@ -30,7 +30,7 @@ This document defines the generated structure for the v1 FastAPI scaffold profil
 ## Runtime convention
 
 - `run.app` defaults to `<project_package>.main:app`
-- Host/port defaults remain in `pyquick.toml`
+- Host/port defaults remain in `flint.toml`
 - `GET /health` returns deterministic JSON: `{"status": "ok"}`
 
 ## Extension points

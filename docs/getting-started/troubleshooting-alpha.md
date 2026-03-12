@@ -6,11 +6,11 @@ Use this guide when the quickstart flow fails.
 
 For install/setup issues before quickstart, start with [Install guide](install.md).
 
-## Why can I run `pyqck ...` directly?
+## Why can I run `flint ...` directly?
 
-In alpha, PyQuick delegates environment/package execution to `uv` while keeping PyQuick as the standalone workflow CLI.
+In alpha, Flint delegates environment/package execution to `uv` while keeping Flint as the standalone workflow CLI.
 
-- `pyqck` handles orchestration and diagnostics
+- `flint` handles orchestration and diagnostics
 - `uv` handles environment and tool execution consistency
 
 See [ADR 0002](../adr/0002-standalone-cli-delegated-packaging.md) for the architecture decision.
@@ -24,14 +24,14 @@ Symptoms:
 
 Common causes:
 
-- invalid TOML syntax in `pyquick.toml`
+- invalid TOML syntax in `flint.toml`
 - unsupported keys or wrong value types
 - invalid values (for example wrong `checks_mode`, invalid port)
 
 Fix:
 
-1. check `pyquick.toml` formatting
-2. compare against [reference config example](../reference/examples/pyquick.toml)
+1. check `flint.toml` formatting
+2. compare against [reference config example](../reference/examples/flint.toml)
 3. retry the command
 
 ## `ERROR [tooling]` about missing tool/runner
@@ -50,10 +50,10 @@ Common causes:
 Fix:
 
 1. ensure `uv --version` works
-2. run `pyqck install` (or `pyqck sync`) in project root
-3. verify `[tooling]` values in `pyquick.toml`
+2. run `flint install` (or `flint sync`) in project root
+3. verify `[tooling]` values in `flint.toml`
 
-## `pyqck run` fails to boot app
+## `flint run` fails to boot app
 
 Symptoms:
 
@@ -72,7 +72,7 @@ Fix:
 2. ensure an `app` variable exists
 3. change `[run].port` if needed
 
-## `pyqck dev` feels noisy or slow
+## `flint dev` feels noisy or slow
 
 Symptoms:
 

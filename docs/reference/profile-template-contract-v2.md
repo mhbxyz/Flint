@@ -4,7 +4,7 @@
 
 Status: Accepted for milestone M7.
 
-This document defines the stable contract for selecting `profile` and `template` in `pyqck new` beyond the current API-first alpha baseline.
+This document defines the stable contract for selecting `profile` and `template` in `flint new` beyond the current API-first alpha baseline.
 
 ## Goals
 
@@ -58,7 +58,7 @@ Compatibility is defined by profile/template pair, not by template alone.
 
 ## Defaults and Validation Order
 
-`pyqck new <name>` defaults to:
+`flint new <name>` defaults to:
 
 - `profile=api`
 - `template=fastapi`
@@ -103,7 +103,7 @@ Hint: Choose a template from the profile template catalog.
 
 What stays stable:
 
-- `pyqck new <name> --profile api --template fastapi` remains valid.
+- `flint new <name> --profile api --template fastapi` remains valid.
 - Exit code and error-category conventions stay unchanged.
 
 What becomes explicit in v2:
@@ -125,17 +125,17 @@ What is not implied:
 
 | Case | Input | Expected result |
 | --- | --- | --- |
-| valid api pair | `pyqck new demo --profile api --template fastapi` | success (`0`) |
-| default pair | `pyqck new demo` | resolved to `api/fastapi`, success (`0`) |
-| unknown profile | `pyqck new demo --profile worker` | usage failure (`2`) |
-| reserved profile today | `pyqck new demo --profile lib` | usage failure (`2`) with reserved hint |
-| unknown template | `pyqck new demo --template flask` | usage failure (`2`) |
-| incompatible pair | `pyqck new demo --profile cli --template fastapi` | usage failure (`2`) |
+| valid api pair | `flint new demo --profile api --template fastapi` | success (`0`) |
+| default pair | `flint new demo` | resolved to `api/fastapi`, success (`0`) |
+| unknown profile | `flint new demo --profile worker` | usage failure (`2`) |
+| reserved profile today | `flint new demo --profile lib` | usage failure (`2`) with reserved hint |
+| unknown template | `flint new demo --template flask` | usage failure (`2`) |
+| incompatible pair | `flint new demo --profile cli --template fastapi` | usage failure (`2`) |
 
 ## See Also
 
 - [Command contract v1](command-contract-v1.md)
-- [Issue #31](https://github.com/mhbxyz/pyquick/issues/31)
-- [Issue #25](https://github.com/mhbxyz/pyquick/issues/25)
-- [Issue #24](https://github.com/mhbxyz/pyquick/issues/24)
-- [Issue #26](https://github.com/mhbxyz/pyquick/issues/26)
+- [Issue #31](https://github.com/mhbxyz/Flint/issues/31)
+- [Issue #25](https://github.com/mhbxyz/Flint/issues/25)
+- [Issue #24](https://github.com/mhbxyz/Flint/issues/24)
+- [Issue #26](https://github.com/mhbxyz/Flint/issues/26)

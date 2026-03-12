@@ -7,9 +7,9 @@ from typing import Callable, Iterable, Sequence
 
 from watchfiles import watch
 
-from pyqck.devloop.incremental import resolve_check_plan
-from pyqck.devloop.renderer import CycleSummary, DevLoopRenderer
-from pyqck.tooling import ToolAdapters, ToolError, ToolKey
+from flint.devloop.incremental import resolve_check_plan
+from flint.devloop.renderer import CycleSummary, DevLoopRenderer
+from flint.tooling import ToolAdapters, ToolError, ToolKey
 
 IGNORED_PARTS = {"__pycache__", ".pytest_cache", ".ruff_cache", ".pyright", ".venv", ".git"}
 IGNORED_SUFFIXES = {".pyc", ".pyo", ".swp", ".tmp"}

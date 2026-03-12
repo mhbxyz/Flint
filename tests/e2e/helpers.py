@@ -21,9 +21,9 @@ def env_with_repo_src() -> dict[str, str]:
     return env
 
 
-def run_pyqck(args: list[str], cwd: Path, timeout: int = 120) -> subprocess.CompletedProcess[str]:
+def run_flint(args: list[str], cwd: Path, timeout: int = 120) -> subprocess.CompletedProcess[str]:
     return subprocess.run(
-        [sys.executable, "-m", "pyqck", *args],
+        [sys.executable, "-m", "flint", *args],
         cwd=cwd,
         env=env_with_repo_src(),
         capture_output=True,

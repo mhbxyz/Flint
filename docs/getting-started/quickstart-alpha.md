@@ -2,22 +2,22 @@
 
 [Project README](../../README.md) · [Docs Index](../README.md) · [Getting Started](README.md)
 
-Goal: run your first PyQuick API project in under 10 minutes.
+Goal: run your first Flint API project in under 10 minutes.
 
 Need CLI installation first? Use the [Install guide](install.md).
 
 ## Execution model (important)
 
-PyQuick is a standalone workflow CLI, but dependency/environment execution is delegated to `uv` in alpha.
+Flint is a standalone workflow CLI, but dependency/environment execution is delegated to `uv` in alpha.
 
-- Bootstrap from anywhere: `pyqck new ...`
-- Inside generated projects: run workflow commands directly (`pyqck ...`)
+- Bootstrap from anywhere: `flint new ...`
+- Inside generated projects: run workflow commands directly (`flint ...`)
 
 Why this split?
 
 - deterministic tool versions from project lock/env
 - consistent behavior across contributors and CI
-- explicit separation of concerns (`pyqck` orchestration, `uv` packaging runtime)
+- explicit separation of concerns (`flint` orchestration, `uv` packaging runtime)
 
 ## Prerequisites
 
@@ -28,7 +28,7 @@ Why this split?
 ## 1) Create a new API project
 
 ```bash
-pyqck new myapi --profile api --template fastapi
+flint new myapi --profile api --template fastapi
 cd myapi
 ```
 
@@ -36,15 +36,15 @@ Expected result:
 
 - project files generated
 - `src/` layout ready
-- `pyquick.toml` present
+- `flint.toml` present
 
 ## 2) Install dependencies
 
 ```bash
-pyqck install
+flint install
 ```
 
-Alias available: `pyqck sync`.
+Alias available: `flint sync`.
 
 Expected result:
 
@@ -54,7 +54,7 @@ Expected result:
 ## 3) Start the API
 
 ```bash
-pyqck run
+flint run
 ```
 
 Expected result:
@@ -71,7 +71,7 @@ curl http://127.0.0.1:8000/health
 ## 4) Run the dev loop
 
 ```bash
-pyqck dev
+flint dev
 ```
 
 Expected result:
@@ -82,8 +82,8 @@ Expected result:
 ## 5) Validate quality gates
 
 ```bash
-pyqck test
-pyqck check
+flint test
+flint check
 ```
 
 Expected result:
@@ -93,11 +93,11 @@ Expected result:
 
 ## Success checklist
 
-- [ ] `pyqck new` generated project successfully
-- [ ] dependencies installed with `pyqck install`
+- [ ] `flint new` generated project successfully
+- [ ] dependencies installed with `flint install`
 - [ ] `/health` returns `{"status": "ok"}`
-- [ ] `pyqck dev` reacts to file changes
-- [ ] `pyqck test` and `pyqck check` pass
+- [ ] `flint dev` reacts to file changes
+- [ ] `flint test` and `flint check` pass
 
 ## If something fails
 

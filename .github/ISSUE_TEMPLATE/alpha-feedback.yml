@@ -68,9 +68,9 @@ body:
       label: Commands run
       description: Paste exact commands
       placeholder: |
-        pyqck new myapi --profile api --template fastapi
+        flint new myapi --profile api --template fastapi
         uv sync --extra dev
-        pyqck dev
+        flint dev
     validations:
       required: true
 

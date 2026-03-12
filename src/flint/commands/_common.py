@@ -3,11 +3,11 @@ from typing import Sequence
 
 import typer
 
-from pyqck.config import ConfigError, PyQuickConfig, load_config
-from pyqck.tooling import CommandResult, ToolAdapters, ToolError, ToolKey
+from flint.config import ConfigError, FlintConfig, load_config
+from flint.tooling import CommandResult, ToolAdapters, ToolError, ToolKey
 
 
-def load_config_or_exit() -> PyQuickConfig:
+def load_config_or_exit() -> FlintConfig:
     try:
         return load_config(Path.cwd())
     except ConfigError as exc:

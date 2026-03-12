@@ -3,13 +3,13 @@ requires = ["hatchling>=1.25.0"]
 build-backend = "hatchling.build"
 
 [project]
-name = "pyqck"
+name = "flint-dev"
 version = "0.2.0"
-description = "PyQuick is the developer toolchain for Python APIs"
+description = "Flint is the developer toolchain for Python projects"
 readme = "README.md"
 requires-python = ">=3.12"
 license = { text = "MIT" }
-authors = [{ name = "PyQuick Team" }]
+authors = [{ name = "Flint Team" }]
 keywords = ["python", "cli", "toolchain", "scaffold", "developer-experience"]
 classifiers = [
   "Development Status :: 3 - Alpha",
@@ -27,10 +27,10 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/mhbxyz/pyquick"
-Repository = "https://github.com/mhbxyz/pyquick"
-Issues = "https://github.com/mhbxyz/pyquick/issues"
-Documentation = "https://github.com/mhbxyz/pyquick/tree/main/docs"
+Homepage = "https://github.com/mhbxyz/Flint"
+Repository = "https://github.com/mhbxyz/Flint"
+Issues = "https://github.com/mhbxyz/Flint/issues"
+Documentation = "https://github.com/mhbxyz/Flint/tree/main/docs"
 
 [project.optional-dependencies]
 dev = [
@@ -40,7 +40,7 @@ dev = [
 ]
 
 [project.scripts]
-pyqck = "pyqck.cli:main"
+flint = "flint.cli:main"
 
 [tool.pytest.ini_options]
 minversion = "8.0"
@@ -58,3 +58,6 @@ select = ["E", "F", "I", "B", "UP"]
 [tool.ruff.format]
 quote-style = "double"
 indent-style = "space"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/flint"]

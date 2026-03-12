@@ -1,4 +1,4 @@
 def test_can_import_cli_app() -> None:
-    from pyqck.cli import app
+    from flint.cli import app
 
-    assert app.info.name == "pyqck"
+    assert app.info.name == "flint"

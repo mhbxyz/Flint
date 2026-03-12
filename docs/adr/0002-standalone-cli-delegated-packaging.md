@@ -4,23 +4,23 @@
 
 - Status: Accepted
 - Date: 2026-02-20
-- Owners: PyQuick maintainers
+- Owners: Flint maintainers
 - Related: [Alpha quickstart](../getting-started/quickstart-alpha.md), milestone M5 planning
 
 ## Context
 
-PyQuick aims to feel like a standalone product CLI. Current alpha workflows rely on `uv` for environment and package operations (`uv sync`, `uv run`). Without an explicit decision, users can perceive this as contradictory: standalone UX versus delegated runtime execution.
+Flint aims to feel like a standalone product CLI. Current alpha workflows rely on `uv` for environment and package operations (`uv sync`, `uv run`). Without an explicit decision, users can perceive this as contradictory: standalone UX versus delegated runtime execution.
 
 ## Decision
 
-1. PyQuick remains a standalone orchestration CLI at product/UX level.
-2. PyQuick does not become a package manager.
+1. Flint remains a standalone orchestration CLI at product/UX level.
+2. Flint does not become a package manager.
 3. Packaging and environment execution are delegated to a backend, with `uv` as the only official backend during alpha.
-4. `pyqck install` will be introduced in M5 as a user-facing wrapper over backend sync operations.
+4. `flint install` will be introduced in M5 as a user-facing wrapper over backend sync operations.
 
 ## Responsibility Boundary
 
-- `pyqck` owns:
+- `flint` owns:
   - command workflows (`new`, `dev`, `run`, `test`, `lint`, `fmt`, `check`)
   - project conventions and defaults
   - diagnostics and actionable errors
@@ -34,7 +34,7 @@ PyQuick aims to feel like a standalone product CLI. Current alpha workflows rely
 - Positive:
   - clear product boundary and maintainable architecture
   - easier future backend abstraction without changing user workflows
-  - keeps PyQuick focused on developer experience and orchestration
+  - keeps Flint focused on developer experience and orchestration
 - Tradeoff:
   - alpha docs must explicitly explain why project-local commands route through `uv`
 
@@ -42,7 +42,7 @@ PyQuick aims to feel like a standalone product CLI. Current alpha workflows rely
 
 - Alpha (now): keep `uv` as required backend and document execution model clearly.
 - M5:
-  - add `pyqck install` wrapper command
+  - add `flint install` wrapper command
   - define backend interface (`sync`, `exec_tool`, `doctor`) behind command execution
   - retain strict determinism and actionable failure diagnostics
 

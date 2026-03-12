@@ -2,8 +2,8 @@ from pathlib import Path
 
 import pytest
 
-from pyqck.scaffold.catalog import build_default_scaffold_registry
-from pyqck.scaffold.registry import (
+from flint.scaffold.catalog import build_default_scaffold_registry
+from flint.scaffold.registry import (
     IncompatibleTemplateError,
     ReservedProfileError,
     ScaffoldRegistry,

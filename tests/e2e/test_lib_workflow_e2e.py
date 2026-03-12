@@ -2,20 +2,20 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from tests.e2e.helpers import run_pyqck
+from tests.e2e.helpers import run_flint
 
 
 def test_e2e_lib_workflow_new_install_test_check(tmp_path: Path) -> None:
-    create = run_pyqck(["new", "mylib", "--profile", "lib"], cwd=tmp_path)
+    create = run_flint(["new", "mylib", "--profile", "lib"], cwd=tmp_path)
     assert create.returncode == 0, create.stdout + create.stderr
 
     project_dir = tmp_path / "mylib"
 
-    install = run_pyqck(["install"], cwd=project_dir, timeout=240)
+    install = run_flint(["install"], cwd=project_dir, timeout=240)
     assert install.returncode == 0, install.stdout + install.stderr
 
-    test_result = run_pyqck(["test"], cwd=project_dir)
+    test_result = run_flint(["test"], cwd=project_dir)
     assert test_result.returncode == 0, test_result.stdout + test_result.stderr
 
-    check_result = run_pyqck(["check"], cwd=project_dir)
+    check_result = run_flint(["check"], cwd=project_dir)
     assert check_result.returncode == 0, check_result.stdout + check_result.stderr

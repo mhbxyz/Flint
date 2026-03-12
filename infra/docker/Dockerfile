@@ -7,5 +7,5 @@ COPY src ./src
 
 RUN pip install --no-cache-dir .
 
-ENTRYPOINT ["pyqck"]
+ENTRYPOINT ["flint"]
 CMD ["--help"]

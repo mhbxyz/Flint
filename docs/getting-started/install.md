@@ -1,18 +1,18 @@
-# Install PyQuick CLI
+# Install Flint CLI
 
 [Project README](../../README.md) · [Docs Index](../README.md) · [Getting Started](README.md)
 
-Goal: install `pyqck` and verify `pyqck --help` works in your shell.
+Goal: install `flint` and verify `flint --help` works in your shell.
 
 ## Choose an install mode
 
-- **Global CLI (`pipx`)**: best for running `pyqck` from anywhere in your shell `PATH`
+- **Global CLI (`pipx`)**: best for running `flint` from anywhere in your shell `PATH`
 - **Project-local (`venv` + `pip`)**: best when each repository should pin its own tool version
 - **Experimental Linux binary**: best for trying a direct standalone executable from GitHub Releases
 
 ## Option A) Global install with `pipx`
 
-Use this when you want one shared `pyqck` command across projects.
+Use this when you want one shared `flint` command across projects.
 
 ### Prerequisites
 
@@ -22,19 +22,19 @@ Use this when you want one shared `pyqck` command across projects.
 ### Install
 
 ```bash
-pipx install pyqck
+pipx install flint-dev
 ```
 
 ### Verify
 
 ```bash
-pyqck --help
+flint --help
 ```
 
 Expected result:
 
 - help output prints successfully
-- `pyqck` is available directly from your shell
+- `flint` is available directly from your shell
 
 ## Option B) Project-local install with `venv` and `pip`
 
@@ -54,19 +54,19 @@ source .venv/bin/activate
 ### Install
 
 ```bash
-pip install pyqck
+pip install flint-dev
 ```
 
 ### Verify
 
 ```bash
-pyqck --help
+flint --help
 ```
 
 Expected result:
 
 - help output prints successfully
-- `pyqck` resolves from active virtual environment
+- `flint` resolves from active virtual environment
 
 ## Option C) Experimental Linux binary from GitHub Releases
 
@@ -75,24 +75,24 @@ Use this when you want to try the standalone Linux executable build.
 ### Prerequisites
 
 - Linux x86_64
-- `uv` installed for project environment commands such as `pyqck install` and `pyqck test`
+- `uv` installed for project environment commands such as `flint install` and `flint test`
 
 ### Download and verify
 
 1. Open the latest release page and download these assets:
-   - `pyqck-<version>-linux-x86_64-experimental`
-   - `pyqck-<version>-linux-x86_64-experimental.sha256`
+   - `flint-<version>-linux-x86_64-experimental`
+   - `flint-<version>-linux-x86_64-experimental.sha256`
 2. verify checksum:
 
 ```bash
-sha256sum -c pyqck-<version>-linux-x86_64-experimental.sha256
+sha256sum -c flint-<version>-linux-x86_64-experimental.sha256
 ```
 
 ### Run
 
 ```bash
-chmod +x pyqck-<version>-linux-x86_64-experimental
-./pyqck-<version>-linux-x86_64-experimental --help
+chmod +x flint-<version>-linux-x86_64-experimental
+./flint-<version>-linux-x86_64-experimental --help
 ```
 
 Expected result:
@@ -107,13 +107,13 @@ Note: binary distribution is experimental in alpha; `pipx` remains the primary s
 Global (`pipx`):
 
 ```bash
-pipx upgrade pyqck
+pipx upgrade flint-dev
 ```
 
 Project-local (`venv`):
 
 ```bash
-pip install --upgrade pyqck
+pip install --upgrade flint-dev
 ```
 
 ## Uninstall
@@ -121,18 +121,18 @@ pip install --upgrade pyqck
 Global (`pipx`):
 
 ```bash
-pipx uninstall pyqck
+pipx uninstall flint-dev
 ```
 
 Project-local (`venv`):
 
 ```bash
-pip uninstall pyqck
+pip uninstall flint-dev
 ```
 
 ## Troubleshooting
 
-### `pyqck: command not found`
+### `flint: command not found`
 
 Common causes:
 
@@ -144,7 +144,7 @@ Fix:
 1. run `pipx ensurepath`
 2. restart your shell session
 3. for local installs, run `source .venv/bin/activate`
-4. retry `pyqck --help`
+4. retry `flint --help`
 
 ### Wrong Python version
 
@@ -162,9 +162,9 @@ Fix:
 
 Fix:
 
-1. confirm install state (`pipx list` or `pip show pyqck` in active venv)
+1. confirm install state (`pipx list` or `pip show flint-dev` in active venv)
 2. verify your active shell and environment activation
-3. rerun verification: `pyqck --help`
+3. rerun verification: `flint --help`
 
 ## Next step
 

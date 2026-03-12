@@ -2,7 +2,7 @@
 
 [Project README](../../README.md) · [Docs Index](../README.md) · [Getting Started](README.md)
 
-Goal: create and validate your first PyQuick Python library project.
+Goal: create and validate your first Flint Python library project.
 
 Need CLI installation first? Use the [Install guide](install.md).
 
@@ -14,7 +14,7 @@ Need CLI installation first? Use the [Install guide](install.md).
 ## 1) Create a new library project
 
 ```bash
-pyqck new mylib --profile lib
+flint new mylib --profile lib
 cd mylib
 ```
 
@@ -22,12 +22,12 @@ Expected result:
 
 - `src/` package scaffold generated
 - baseline test file generated
-- `pyquick.toml` contains `profile = "lib"`
+- `flint.toml` contains `profile = "lib"`
 
 ## 2) Install dependencies
 
 ```bash
-pyqck install
+flint install
 ```
 
 Expected result:
@@ -38,8 +38,8 @@ Expected result:
 ## 3) Run baseline quality flow
 
 ```bash
-pyqck test
-pyqck check
+flint test
+flint check
 ```
 
 Expected result:
@@ -49,10 +49,10 @@ Expected result:
 
 ## Success checklist
 
-- [ ] `pyqck new --profile lib` generated project successfully
-- [ ] dependencies installed with `pyqck install`
-- [ ] `pyqck test` passes
-- [ ] `pyqck check` passes
+- [ ] `flint new --profile lib` generated project successfully
+- [ ] dependencies installed with `flint install`
+- [ ] `flint test` passes
+- [ ] `flint check` passes
 
 ## See Also
 

@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from pyqck.scaffold import FastAPITemplateContext, build_fastapi_template, normalize_package_name
+from flint.scaffold import FastAPITemplateContext, build_fastapi_template, normalize_package_name
 
 
 def test_normalize_package_name_handles_common_cases() -> None:
@@ -19,17 +19,17 @@ def test_fastapi_template_uses_project_named_package() -> None:
     assert Path("src/my_api/api/health.py") in files
     assert Path("src/my_api/api/router.py") in files
     assert Path("tests/test_health.py") in files
-    assert Path("pyquick.toml") in files
+    assert Path("flint.toml") in files
 
 
 def test_fastapi_template_sets_run_app_path_to_package_main() -> None:
     context = FastAPITemplateContext.from_project_name("billing-service")
     files = build_fastapi_template(context)
 
-    pyquick_toml = files[Path("pyquick.toml")]
-    assert 'app = "billing_service.main:app"' in pyquick_toml
-    assert 'checks_mode = "incremental"' in pyquick_toml
-    assert "fallback_threshold = 8" in pyquick_toml
+    flint_toml = files[Path("flint.toml")]
+    assert 'app = "billing_service.main:app"' in flint_toml
+    assert 'checks_mode = "incremental"' in flint_toml
+    assert "fallback_threshold = 8" in flint_toml
 
 
 def test_fastapi_template_does_not_include_db_dependencies_or_files() -> None:

@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from pyqck.scaffold import LibTemplateContext, build_lib_template
+from flint.scaffold import LibTemplateContext, build_lib_template
 
 
 def test_lib_template_builds_expected_layout() -> None:
@@ -8,7 +8,7 @@ def test_lib_template_builds_expected_layout() -> None:
     files = build_lib_template(context)
 
     assert Path("pyproject.toml") in files
-    assert Path("pyquick.toml") in files
+    assert Path("flint.toml") in files
     assert Path("src/my_library/__init__.py") in files
     assert Path("tests/test_my_library.py") in files
 
@@ -17,9 +17,9 @@ def test_lib_template_uses_lib_profile_and_default_template() -> None:
     context = LibTemplateContext.from_project_name("billing-lib")
     files = build_lib_template(context)
 
-    pyquick_toml = files[Path("pyquick.toml")]
-    assert 'profile = "lib"' in pyquick_toml
-    assert 'template = "baseline-lib"' in pyquick_toml
+    flint_toml = files[Path("flint.toml")]
+    assert 'profile = "lib"' in flint_toml
+    assert 'template = "baseline-lib"' in flint_toml
 
 
 def test_lib_template_contains_quality_defaults() -> None:

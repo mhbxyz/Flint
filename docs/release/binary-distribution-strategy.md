@@ -20,26 +20,26 @@ Prototype path: **PyInstaller one-file binary**.
 Build command used:
 
 ```bash
-uv run --with pyinstaller pyinstaller --onefile --name pyqck-linux --specpath /tmp src/pyqck/__main__.py --paths src
+uv run --with pyinstaller pyinstaller --onefile --name flint-linux --specpath /tmp src/flint/__main__.py --paths src
 ```
 
 Measured on local Linux environment:
 
 - Build time (clean): about `11.44s`
-- Artifact: `dist/pyqck-linux`
+- Artifact: `dist/flint-linux`
 - Artifact size: about `16M`
 - Startup (`--help`) average across 5 runs: about `225ms`
 
 Smoke flow executed successfully:
 
 ```bash
-PYQCK_BIN="$PWD/dist/pyqck-linux"
+FLINT_BIN="$PWD/dist/flint-linux"
 
-"$PYQCK_BIN" --help
-"$PYQCK_BIN" new smoke-api --profile api --template fastapi
+"$FLINT_BIN" --help
+"$FLINT_BIN" new smoke-api --profile api --template fastapi
 cd smoke-api
-"$PYQCK_BIN" install
-"$PYQCK_BIN" test
+"$FLINT_BIN" install
+"$FLINT_BIN" test
 ```
 
 Observed outcome:
@@ -70,5 +70,5 @@ Observed outcome:
 ## See Also
 
 - [ADR 0003](../adr/0003-binary-distribution-strategy.md)
-- [Releasing PyQuick](releasing.md)
+- [Releasing Flint](releasing.md)
 - [PyPI trusted publishing](pypi-publishing.md)

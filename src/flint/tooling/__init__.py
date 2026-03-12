@@ -1,4 +1,4 @@
-from pyqck.tooling.adapters import (
+from flint.tooling.adapters import (
     CommandResult,
     ToolAdapters,
     ToolError,

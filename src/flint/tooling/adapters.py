@@ -7,7 +7,7 @@ import shutil
 import subprocess
 from typing import Callable, Sequence
 
-from pyqck.config import PyQuickConfig
+from flint.config import FlintConfig
 
 
 class ToolKey(StrEnum):
@@ -64,7 +64,7 @@ class SubprocessRunner:
 class ToolAdapters:
     def __init__(
         self,
-        config: PyQuickConfig,
+        config: FlintConfig,
         runner: SubprocessRunner | None = None,
         which: Callable[[str], str | None] | None = None,
     ) -> None:
@@ -73,7 +73,7 @@ class ToolAdapters:
         self._which = which or shutil.which
 
     @property
-    def config(self) -> PyQuickConfig:
+    def config(self) -> FlintConfig:
         return self._config
 
     def spec(self, key: ToolKey) -> ToolSpec:

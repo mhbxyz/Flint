@@ -4,8 +4,8 @@ from pathlib import Path
 
 import typer
 
-from pyqck.scaffold import ScaffoldLookupError, build_default_scaffold_registry
-from pyqck.scaffold.writer import write_scaffold
+from flint.scaffold import ScaffoldLookupError, build_default_scaffold_registry
+from flint.scaffold.writer import write_scaffold
 
 
 def new_command(
@@ -13,7 +13,7 @@ def new_command(
     profile: str = typer.Option("api", "--profile", help="Project profile."),
     template: str | None = typer.Option(None, "--template", help="Template to use."),
 ) -> None:
-    """Create a new PyQuick project scaffold."""
+    """Create a new Flint project scaffold."""
 
     registry = build_default_scaffold_registry()
     try:
@@ -60,9 +60,9 @@ def new_command(
     )
     typer.echo("Next steps:")
     typer.echo(f"  cd {name}")
-    typer.echo("  pyqck install")
-    typer.echo("  pyqck run")
-    typer.echo("  pyqck test")
+    typer.echo("  flint install")
+    typer.echo("  flint run")
+    typer.echo("  flint test")
 
 
 def _usage_error(message: str, hint: str) -> None:

@@ -2,7 +2,7 @@ from pathlib import Path
 
 from typer.testing import CliRunner
 
-from pyqck.cli import app
+from flint.cli import app
 
 
 def test_new_generates_fastapi_project_structure() -> None:
@@ -16,16 +16,16 @@ def test_new_generates_fastapi_project_structure() -> None:
 
         assert result.exit_code == 0
         assert "Created project `my-api`" in result.output
-        assert "pyqck run" in result.output
+        assert "flint run" in result.output
 
         project_dir = Path("my-api")
-        assert (project_dir / "pyquick.toml").exists()
+        assert (project_dir / "flint.toml").exists()
         assert (project_dir / "src" / "my_api" / "main.py").exists()
         assert (project_dir / "src" / "my_api" / "api" / "health.py").exists()
         assert (project_dir / "tests" / "test_health.py").exists()
 
-        pyquick_toml = (project_dir / "pyquick.toml").read_text(encoding="utf-8")
-        assert 'app = "my_api.main:app"' in pyquick_toml
+        flint_toml = (project_dir / "flint.toml").read_text(encoding="utf-8")
+        assert 'app = "my_api.main:app"' in flint_toml
 
 
 def test_new_generates_lib_project_structure() -> None:
@@ -42,7 +42,7 @@ def test_new_generates_lib_project_structure() -> None:
 
         project_dir = Path("my-lib")
         assert (project_dir / "pyproject.toml").exists()
-        assert (project_dir / "pyquick.toml").exists()
+        assert (project_dir / "flint.toml").exists()
         assert (project_dir / "src" / "my_lib" / "__init__.py").exists()
         assert (project_dir / "tests" / "test_my_lib.py").exists()
 
@@ -61,7 +61,7 @@ def test_new_generates_cli_project_structure() -> None:
 
         project_dir = Path("my-cli")
         assert (project_dir / "pyproject.toml").exists()
-        assert (project_dir / "pyquick.toml").exists()
+        assert (project_dir / "flint.toml").exists()
         assert (project_dir / "src" / "my_cli" / "main.py").exists()
         assert (project_dir / "tests" / "test_my_cli.py").exists()
 

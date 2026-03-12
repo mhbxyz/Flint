@@ -13,7 +13,7 @@ Triage and prioritization rules are defined in [Alpha triage process](triage-alp
 
 Examples:
 
-- `[alpha][blocker] pyqck run fails on fresh scaffold`
+- `[alpha][blocker] flint run fails on fresh scaffold`
 - `[alpha][medium] dev loop runs full checks too often`
 
 ## Severity

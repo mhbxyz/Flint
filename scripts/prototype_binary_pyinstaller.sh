@@ -10,9 +10,9 @@ cd "$ROOT_DIR"
 
 uv run --with pyinstaller pyinstaller \
   --onefile \
-  --name pyqck-linux \
+  --name flint-linux \
   --specpath /tmp \
-  src/pyqck/__main__.py \
+  src/flint/__main__.py \
   --paths src
 
-echo "Built artifact: $ROOT_DIR/dist/pyqck-linux"
+echo "Built artifact: $ROOT_DIR/dist/flint-linux"

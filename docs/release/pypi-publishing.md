@@ -2,20 +2,20 @@
 
 [Project README](../../README.md) · [Docs Index](../README.md) · [Release and Feedback](README.md)
 
-This guide documents how `pyqck` is published to TestPyPI and PyPI via GitHub OIDC trusted publishing.
+This guide documents how `flint` is published to TestPyPI and PyPI via GitHub OIDC trusted publishing.
 
 ## Workflows
 
 - Build validation: `.github/workflows/python-package.yml`
   - runs on PR and `main`
   - builds wheel/sdist via `uv build`
-  - smoke-installs built wheel and runs `pyqck --help`
+  - smoke-installs built wheel and runs `flint --help`
 - Publish pipeline: `.github/workflows/publish.yml`
   - runs on version tags (`v*`)
   - publishes to TestPyPI
   - verifies install from TestPyPI via `pip`
   - verifies install from TestPyPI via `pipx`
-  - runs smoke flow: `pyqck --help`, `pyqck new ...`, `uv sync --extra dev`, `pyqck test`
+  - runs smoke flow: `flint --help`, `flint new ...`, `uv sync --extra dev`, `flint test`
   - publishes to PyPI
   - creates GitHub Release with wheel/sdist assets
 
@@ -33,7 +33,7 @@ Both paths preserve manual approvals on protected environments (`testpypi`, `pyp
 Configure **Trusted Publisher** on both indexes with:
 
 - Owner: `mhbxyz`
-- Repository: `pyquick`
+- Repository: `Flint`
 - Workflow: `publish.yml`
 - Environment: `testpypi` (for TestPyPI) and `pypi` (for PyPI)
 
@@ -65,6 +65,6 @@ Expected sequence:
 ## See Also
 
 - [Release and Feedback index](README.md)
-- [Releasing PyQuick](releasing.md)
+- [Releasing Flint](releasing.md)
 - [Alpha release checklist](release-alpha-checklist.md)
 - [GitHub release automation](github-releases.md)

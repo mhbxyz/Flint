@@ -4,16 +4,16 @@ from typing import Sequence
 
 import pytest
 
-from pyqck.config import (
+from flint.config import (
     ChecksSection,
     DevSection,
     ProjectSection,
-    PyQuickConfig,
+    FlintConfig,
     RunSection,
     ToolingSection,
 )
-from pyqck.tooling.adapters import SubprocessRunner
-from pyqck.tooling import ToolAdapters, ToolKey, ToolNotAvailableError
+from flint.tooling.adapters import SubprocessRunner
+from flint.tooling import ToolAdapters, ToolKey, ToolNotAvailableError
 
 
 class FakeRunner(SubprocessRunner):
@@ -43,10 +43,10 @@ class FakeRunner(SubprocessRunner):
         )
 
 
-def _config(tmp_path: Path) -> PyQuickConfig:
-    return PyQuickConfig(
+def _config(tmp_path: Path) -> FlintConfig:
+    return FlintConfig(
         root_dir=tmp_path,
-        file_path=tmp_path / "pyquick.toml",
+        file_path=tmp_path / "flint.toml",
         project=ProjectSection(),
         tooling=ToolingSection(),
         dev=DevSection(),
@@ -100,7 +100,7 @@ def test_run_with_live_output_disables_capture(tmp_path: Path) -> None:
 
 def test_tooling_config_controls_executable_name(tmp_path: Path) -> None:
     config = _config(tmp_path)
-    config = PyQuickConfig(
+    config = FlintConfig(
         root_dir=config.root_dir,
         file_path=config.file_path,
         project=config.project,

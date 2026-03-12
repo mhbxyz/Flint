@@ -3,8 +3,8 @@ from pathlib import Path
 import subprocess
 from types import SimpleNamespace
 
-from pyqck.devloop.orchestrator import run_dev_loop
-from pyqck.tooling import CommandResult, ToolKey
+from flint.devloop.orchestrator import run_dev_loop
+from flint.tooling import CommandResult, ToolKey
 
 
 class FakeProcess:

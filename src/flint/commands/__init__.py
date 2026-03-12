@@ -1,6 +1,6 @@
 import typer
 
-from pyqck.commands import check, dev, fmt, install, lint, new, run, test
+from flint.commands import check, dev, fmt, install, lint, new, run, test
 
 
 def register_commands(app: typer.Typer) -> None:

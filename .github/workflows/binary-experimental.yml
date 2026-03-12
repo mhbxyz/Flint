@@ -56,32 +56,32 @@ jobs:
           set -euo pipefail
           uv run --with pyinstaller pyinstaller \
             --onefile \
-            --name pyqck-linux \
+            --name flint-linux \
             --specpath /tmp \
-            src/pyqck/__main__.py \
+            src/flint/__main__.py \
             --paths src
 
       - name: Smoke test Linux binary
         run: |
           set -euo pipefail
-          PYQCK_BIN="$PWD/dist/pyqck-linux"
+          FLINT_BIN="$PWD/dist/flint-linux"
 
-          "$PYQCK_BIN" --help
+          "$FLINT_BIN" --help
 
           mkdir -p .smoke-binary
           cd .smoke-binary
 
-          "$PYQCK_BIN" new smoke-api --profile api --template fastapi
+          "$FLINT_BIN" new smoke-api --profile api --template fastapi
           cd smoke-api
-          "$PYQCK_BIN" install
-          "$PYQCK_BIN" test
+          "$FLINT_BIN" install
+          "$FLINT_BIN" test
 
       - name: Package binary assets
         run: |
           set -euo pipefail
-          asset_base="pyqck-${{ steps.meta.outputs.version }}-linux-x86_64-experimental"
+          asset_base="flint-${{ steps.meta.outputs.version }}-linux-x86_64-experimental"
 
-          cp dist/pyqck-linux "$asset_base"
+          cp dist/flint-linux "$asset_base"
           chmod +x "$asset_base"
           tar -czf "${asset_base}.tar.gz" "$asset_base"
           sha256sum "$asset_base" "${asset_base}.tar.gz" > "${asset_base}.sha256"
@@ -91,9 +91,9 @@ jobs:
         with:
           name: binary-linux-${{ steps.meta.outputs.tag }}
           path: |
-            pyqck-${{ steps.meta.outputs.version }}-linux-x86_64-experimental
-            pyqck-${{ steps.meta.outputs.version }}-linux-x86_64-experimental.tar.gz
-            pyqck-${{ steps.meta.outputs.version }}-linux-x86_64-experimental.sha256
+            flint-${{ steps.meta.outputs.version }}-linux-x86_64-experimental
+            flint-${{ steps.meta.outputs.version }}-linux-x86_64-experimental.tar.gz
+            flint-${{ steps.meta.outputs.version }}-linux-x86_64-experimental.sha256
 
       - name: Upload binary assets to release
         env:
@@ -102,7 +102,7 @@ jobs:
           set -euo pipefail
           tag="${{ steps.meta.outputs.tag }}"
           gh release upload "$tag" \
-            "pyqck-${{ steps.meta.outputs.version }}-linux-x86_64-experimental" \
-            "pyqck-${{ steps.meta.outputs.version }}-linux-x86_64-experimental.tar.gz" \
-            "pyqck-${{ steps.meta.outputs.version }}-linux-x86_64-experimental.sha256" \
+            "flint-${{ steps.meta.outputs.version }}-linux-x86_64-experimental" \
+            "flint-${{ steps.meta.outputs.version }}-linux-x86_64-experimental.tar.gz" \
+            "flint-${{ steps.meta.outputs.version }}-linux-x86_64-experimental.sha256" \
             --clobber

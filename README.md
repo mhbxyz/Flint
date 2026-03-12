@@ -1,30 +1,30 @@
-# PyQuick
+# Flint
 
-PyQuick is the developer toolchain for Python projects.
+Flint is the developer toolchain for Python projects.
 
 ## TL;DR
 
 ```bash
-pipx install pyqck
-pyqck new myapi --profile api --template fastapi
+pipx install flint-dev
+flint new myapi --profile api --template fastapi
 cd myapi
-pyqck install
-pyqck test
-pyqck check
+flint install
+flint test
+flint check
 ```
 
 ## Core Commands
 
 ```bash
-pyqck new <name> --profile <api|lib|cli> [--template ...]
-pyqck install
-pyqck sync
-pyqck dev
-pyqck run
-pyqck test
-pyqck lint
-pyqck fmt
-pyqck check
+flint new <name> --profile <api|lib|cli> [--template ...]
+flint install
+flint sync
+flint dev
+flint run
+flint test
+flint lint
+flint fmt
+flint check
 ```
 
 ## Quick Navigation
@@ -51,7 +51,7 @@ pyqck check
 - Profile-based scaffolding for `api`, `lib`, and `cli` projects
 - API profile is the most mature alpha baseline today
 - No DB scaffolding by default
-- Deterministic local checks via `pyqck test` and `pyqck check` across profiles
+- Deterministic local checks via `flint test` and `flint check` across profiles
 - Profile-aware `run`/`dev` behavior is being finalized (tracked in #34)
 
 ## Roadmap

@@ -1,4 +1,4 @@
-from pyqck.cli import main
+from flint.cli import main
 
 
 if __name__ == "__main__":

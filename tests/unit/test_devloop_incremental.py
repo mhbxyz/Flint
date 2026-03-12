@@ -1,4 +1,4 @@
-from pyqck.devloop.incremental import (
+from flint.devloop.incremental import (
     CHECKS_MODE_FULL,
     CHECKS_MODE_INCREMENTAL,
     resolve_check_plan,

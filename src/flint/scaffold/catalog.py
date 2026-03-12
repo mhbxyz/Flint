@@ -2,10 +2,10 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from pyqck.scaffold.cli_template import CLITemplateContext, build_cli_template
-from pyqck.scaffold.fastapi import FastAPITemplateContext, build_fastapi_template
-from pyqck.scaffold.lib_template import LibTemplateContext, build_lib_template
-from pyqck.scaffold.registry import ScaffoldRegistry
+from flint.scaffold.cli_template import CLITemplateContext, build_cli_template
+from flint.scaffold.fastapi import FastAPITemplateContext, build_fastapi_template
+from flint.scaffold.lib_template import LibTemplateContext, build_lib_template
+from flint.scaffold.registry import ScaffoldRegistry
 
 
 def build_default_scaffold_registry() -> ScaffoldRegistry:

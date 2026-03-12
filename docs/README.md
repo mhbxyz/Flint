@@ -2,7 +2,7 @@
 
 [Project README](../README.md)
 
-Use this page as the primary entry point for profile-based PyQuick docs.
+Use this page as the primary entry point for profile-based Flint docs.
 
 ## Getting Started
 
@@ -19,7 +19,7 @@ Use this page as the primary entry point for profile-based PyQuick docs.
 - Command contract v1: [command-contract-v1.md](reference/command-contract-v1.md)
 - Profile/template contract v2: [profile-template-contract-v2.md](reference/profile-template-contract-v2.md)
 - FastAPI scaffold layout: [fastapi-scaffold-template.md](reference/fastapi-scaffold-template.md)
-- Config example: [examples/pyquick.toml](reference/examples/pyquick.toml)
+- Config example: [examples/flint.toml](reference/examples/flint.toml)
 
 ## Dev Loop
 

@@ -1,4 +1,4 @@
-# Releasing PyQuick
+# Releasing Flint
 
 [Project README](../../README.md) · [Docs Index](../README.md) · [Release and Feedback](README.md)
 

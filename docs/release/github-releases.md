@@ -2,7 +2,7 @@
 
 [Project README](../../README.md) · [Docs Index](../README.md) · [Release and Feedback](README.md)
 
-PyQuick creates GitHub Releases from version tags and attaches package artifacts.
+Flint creates GitHub Releases from version tags and attaches package artifacts.
 
 ## Trigger
 
@@ -36,9 +36,9 @@ Workflow: `.github/workflows/publish.yml`
   - `dist/*.whl`
   - `dist/*.tar.gz`
 - Optional experimental binary assets from `.github/workflows/binary-experimental.yml`:
-  - `pyqck-<version>-linux-x86_64-experimental`
-  - `pyqck-<version>-linux-x86_64-experimental.tar.gz`
-  - `pyqck-<version>-linux-x86_64-experimental.sha256`
+  - `flint-<version>-linux-x86_64-experimental`
+  - `flint-<version>-linux-x86_64-experimental.tar.gz`
+  - `flint-<version>-linux-x86_64-experimental.sha256`
 - Standard migration note block (CLI/config/repo naming).
 
 ## Failure modes
@@ -50,5 +50,5 @@ Workflow: `.github/workflows/publish.yml`
 ## See Also
 
 - [PyPI trusted publishing](pypi-publishing.md)
-- [Releasing PyQuick](releasing.md)
+- [Releasing Flint](releasing.md)
 - [Alpha release checklist](release-alpha-checklist.md)

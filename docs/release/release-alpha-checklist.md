@@ -8,7 +8,7 @@ Use this checklist to run a repeatable, auditable go/no-go process for internal 
 
 - Target release: Internal Alpha
 - Product scope: profile-based scaffolds (`api`, `lib`, `cli`) with API as the most mature alpha baseline
-- Packaging/runtime model: standalone PyQuick orchestration with delegated `uv` backend
+- Packaging/runtime model: standalone Flint orchestration with delegated `uv` backend
 
 ## Go/No-Go Gates
 
@@ -18,7 +18,7 @@ Mark each gate as `pass`, `blocked`, or `waived` (with rationale).
 | --- | --- | --- | --- | --- |
 | Functional workflow | `uv run pytest tests/e2e` | Full happy-path and failure-path E2E pass | QA Lead | pending |
 | Core test suite | `uv run pytest` | Full suite green | QA Lead | pending |
-| Quality tooling | `pyqck check` | Deterministic check output, zero failures | Engineering | pending |
+| Quality tooling | `flint check` | Deterministic check output, zero failures | Engineering | pending |
 | Perf guardrails | `scripts/run_benchmarks.sh` | No regression beyond configured threshold | Performance Owner | pending |
 | Docs readiness | Manual review of alpha docs links and command accuracy | Quickstart and troubleshooting are executable | DX/Docs Owner | pending |
 | Release PR and env approvals | Release PR reviewed (if release-please path) + `testpypi`/`pypi` environment approvals recorded | Human go/no-go decisions are auditable | Release Manager | pending |
@@ -44,7 +44,7 @@ Run in order on a clean local environment:
 2. `uv run pytest`
 3. `scripts/run_e2e.sh`
 4. `scripts/run_benchmarks.sh`
-5. `pyqck --help` (command surface check)
+5. `flint --help` (command surface check)
 6. Quickstart dry-run using [API quickstart (baseline)](../getting-started/quickstart-alpha.md)
 
 Record rehearsal outcome:
@@ -59,7 +59,7 @@ Record rehearsal outcome:
 1. Confirm release commit hash and milestone closure state.
 2. Confirm docs links resolve from `README.md`.
 3. Confirm trusted publishing configuration from [PyPI trusted publishing](pypi-publishing.md).
-4. Confirm release mode and review status from [Releasing PyQuick](releasing.md).
+4. Confirm release mode and review status from [Releasing Flint](releasing.md).
 5. Confirm `testpypi` and `pypi` environment approvals are assigned.
 6. Confirm GitHub release automation details from [GitHub release automation](github-releases.md).
 7. Publish internal announcement including:
@@ -95,5 +95,5 @@ Decision timebox for blocker triage: within 24 hours.
 ## See Also
 
 - [Release and Feedback index](README.md)
-- [Releasing PyQuick](releasing.md)
+- [Releasing Flint](releasing.md)
 - [Alpha triage process](triage-alpha-process.md)

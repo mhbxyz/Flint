@@ -5,9 +5,9 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
-from pyqck.scaffold.names import normalize_package_name
+from flint.scaffold.names import normalize_package_name
 
-DEFAULT_CONFIG_FILE = "pyquick.toml"
+DEFAULT_CONFIG_FILE = "flint.toml"
 
 
 @dataclass(slots=True, frozen=True)
@@ -49,7 +49,7 @@ class ChecksSection:
 
 
 @dataclass(slots=True, frozen=True)
-class PyQuickConfig:
+class FlintConfig:
     root_dir: Path
     file_path: Path
     project: ProjectSection
@@ -60,7 +60,7 @@ class PyQuickConfig:
 
 
 class ConfigError(Exception):
-    """Raised when pyquick.toml is invalid."""
+    """Raised when flint.toml is invalid."""
 
     def __init__(self, message: str, hint: str) -> None:
         super().__init__(message)
@@ -70,12 +70,12 @@ class ConfigError(Exception):
 
 @dataclass(slots=True)
 class ProjectConfig:
-    """Backward-compatible alias kept during transition."""
+    """Minimal project config wrapper used by older call sites."""
 
     root_dir: Path
 
 
-def load_config(root_dir: Path, file_name: str = DEFAULT_CONFIG_FILE) -> PyQuickConfig:
+def load_config(root_dir: Path, file_name: str = DEFAULT_CONFIG_FILE) -> FlintConfig:
     file_path = root_dir / file_name
     if not file_path.exists():
         return _default_config(root_dir=root_dir, file_path=file_path)
@@ -102,9 +102,9 @@ def load_config(root_dir: Path, file_name: str = DEFAULT_CONFIG_FILE) -> PyQuick
     return _parse_config(root_dir=root_dir, file_path=file_path, raw=raw)
 
 
-def _default_config(root_dir: Path, file_path: Path) -> PyQuickConfig:
+def _default_config(root_dir: Path, file_path: Path) -> FlintConfig:
     project = ProjectSection()
-    return PyQuickConfig(
+    return FlintConfig(
         root_dir=root_dir,
         file_path=file_path,
         project=project,
@@ -115,7 +115,7 @@ def _default_config(root_dir: Path, file_path: Path) -> PyQuickConfig:
     )
 
 
-def _parse_config(root_dir: Path, file_path: Path, raw: dict[str, Any]) -> PyQuickConfig:
+def _parse_config(root_dir: Path, file_path: Path, raw: dict[str, Any]) -> FlintConfig:
     _assert_allowed_keys(
         actual=raw,
         allowed={"project", "tooling", "dev", "run", "checks"},
@@ -134,7 +134,7 @@ def _parse_config(root_dir: Path, file_path: Path, raw: dict[str, Any]) -> PyQui
     run = _parse_run(run_raw, project=project)
     checks = _parse_checks(checks_raw)
 
-    return PyQuickConfig(
+    return FlintConfig(
         root_dir=root_dir,
         file_path=file_path,
         project=project,

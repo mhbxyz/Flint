@@ -4,12 +4,12 @@
 
 - Status: Accepted
 - Date: 2026-02-21
-- Owners: PyQuick maintainers
+- Owners: Flint maintainers
 - Related: issue #23, [ADR 0002](0002-standalone-cli-delegated-packaging.md), [Binary distribution prototype](../release/binary-distribution-strategy.md)
 
 ## Context
 
-PyQuick is currently distributed as a Python package (`pip`/`pipx`). Some users asked for standalone binaries to reduce install friction and improve first-run UX.
+Flint is currently distributed as a Python package (`pip`/`pipx`). Some users asked for standalone binaries to reduce install friction and improve first-run UX.
 
 The team needs a decision for milestone planning: should alpha include binary artifacts in addition to PyPI distribution.
 
@@ -47,7 +47,7 @@ The team needs a decision for milestone planning: should alpha include binary ar
 
 Linux prototype was successfully built and smoke-tested (see linked release doc):
 
-- Generated artifact: `dist/pyqck-linux`.
+- Generated artifact: `dist/flint-linux`.
 - Smoke checks passed: `--help`, `new`, `install`, `test`.
 - This satisfies issue #23 prototype acceptance for at least one platform.
 
@@ -76,4 +76,4 @@ Linux prototype was successfully built and smoke-tested (see linked release doc)
 ## See Also
 
 - [ADR index](README.md)
-- [Releasing PyQuick](../release/releasing.md)
+- [Releasing Flint](../release/releasing.md)

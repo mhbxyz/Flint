@@ -1,7 +1,7 @@
 import typer
 
-from pyqck.commands._common import build_adapters_or_exit
-from pyqck.tooling import ToolError, ToolKey
+from flint.commands._common import build_adapters_or_exit
+from flint.tooling import ToolError, ToolKey
 
 
 def install_command(ctx: typer.Context) -> None:
@@ -33,7 +33,7 @@ def install_command(ctx: typer.Context) -> None:
         err=True,
     )
     typer.secho(
-        f"Hint: Resolve backend errors above, then retry `pyqck {command_name}`.",
+        f"Hint: Resolve backend errors above, then retry `flint {command_name}`.",
         fg=typer.colors.YELLOW,
         err=True,
     )

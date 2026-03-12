@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from pyqck.devloop.incremental import CHECKS_MODE_INCREMENTAL, resolve_check_plan
+from flint.devloop.incremental import CHECKS_MODE_INCREMENTAL, resolve_check_plan
 
 STEP_COST_SECONDS = {
     "lint": 0.35,

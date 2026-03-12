@@ -1,8 +1,8 @@
 import typer
 
-from pyqck.commands._common import build_adapters_or_exit, ensure_tool_available_or_exit
-from pyqck.devloop import run_dev_loop
-from pyqck.tooling import ToolKey
+from flint.commands._common import build_adapters_or_exit, ensure_tool_available_or_exit
+from flint.devloop import run_dev_loop
+from flint.tooling import ToolKey
 
 
 def dev_command() -> None:

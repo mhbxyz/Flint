@@ -4,7 +4,7 @@
 
 - Status: Accepted
 - Date: 2026-02-19
-- Owners: PyQuick maintainers
+- Owners: Flint maintainers
 - Related: [Command contract v1](../reference/command-contract-v1.md), milestone M1 issue #1
 
 ## See Also
@@ -14,7 +14,7 @@
 
 ## Context
 
-PyQuick v1 alpha optimizes for fast delivery of a reliable command surface for API teams. Expanding scope too early risks instability in core CLI behavior and slows milestone delivery.
+Flint v1 alpha optimizes for fast delivery of a reliable command surface for API teams. Expanding scope too early risks instability in core CLI behavior and slows milestone delivery.
 
 ## Decision
 

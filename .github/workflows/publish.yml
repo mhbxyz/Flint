@@ -105,21 +105,21 @@ jobs:
           . .venv-smoke/bin/activate
           python -m pip install --upgrade pip
           for attempt in 1 2 3 4 5; do
-            if python -m pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple pyqck=="${VERSION}"; then
+            if python -m pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple flint-dev=="${VERSION}"; then
               break
             fi
             if [ "$attempt" -eq 5 ]; then
-              echo "Failed to install pyqck==${VERSION} from TestPyPI"
+              echo "Failed to install flint-dev==${VERSION} from TestPyPI"
               exit 1
             fi
             sleep 20
           done
 
-          pyqck --help
-          pyqck new smoke-api --profile api --template fastapi
+          flint --help
+          flint new smoke-api --profile api --template fastapi
           cd smoke-api
           uv sync --extra dev
-          pyqck test
+          flint test
 
   verify-testpypi-install-pipx:
     runs-on: ubuntu-latest
@@ -146,21 +146,21 @@ jobs:
           export PATH="$HOME/.local/bin:$PATH"
 
           for attempt in 1 2 3 4 5; do
-            if pipx install --pip-args='--index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple' "pyqck==${VERSION}"; then
+            if pipx install --pip-args='--index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple' "flint-dev==${VERSION}"; then
               break
             fi
             if [ "$attempt" -eq 5 ]; then
-              echo "Failed to install pyqck==${VERSION} from TestPyPI via pipx"
+              echo "Failed to install flint-dev==${VERSION} from TestPyPI via pipx"
               exit 1
             fi
             sleep 20
           done
 
-          pyqck --help
-          pyqck new smoke-api-pipx --profile api --template fastapi
+          flint --help
+          flint new smoke-api-pipx --profile api --template fastapi
           cd smoke-api-pipx
           uv sync --extra dev
-          pyqck test
+          flint test
 
   publish-pypi:
     runs-on: ubuntu-latest
@@ -206,6 +206,6 @@ jobs:
             dist/*.tar.gz
           body: |
             ## Migration notes
-            - CLI command: `pyqck`
-            - Config file: `pyquick.toml`
-            - Repository: `mhbxyz/pyquick`
+            - CLI command: `flint`
+            - Config file: `flint.toml`
+            - Repository: `mhbxyz/Flint`

@@ -1,12 +1,12 @@
 import typer
 from rich.console import Console
 
-from pyqck.commands import register_commands
+from flint.commands import register_commands
 
 app = typer.Typer(
-    name="pyqck",
+    name="flint",
     no_args_is_help=True,
-    help="PyQuick CLI - developer toolchain for Python APIs.",
+    help="Flint CLI - developer toolchain for Python projects.",
 )
 console = Console()
 
