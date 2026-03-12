@@ -99,10 +99,10 @@ Expected result:
 
 ## If something fails
 
-Use [Alpha troubleshooting](troubleshooting-alpha.md) for common fixes, then report issues with [Alpha feedback template](../release/alpha-feedback-template.md).
+Use [Alpha troubleshooting](troubleshooting-alpha.md) for common fixes, then open a GitHub issue with reproduction steps.
 
 ## See Also
 
 - [Getting Started index](README.md)
 - [Install guide](install.md)
-- [Release and feedback docs](../release/README.md)
+- [PyPI publishing docs](../release/README.md)

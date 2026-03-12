@@ -34,16 +34,10 @@ Use this page as the primary entry point for profile-based Flint docs.
 - Performance benchmarks: [perf-benchmarks.md](quality/perf-benchmarks.md)
 - Alpha performance baseline: [perf-baseline-alpha.md](quality/perf-baseline-alpha.md)
 
-## Release and Feedback
+## Publishing
 
-- Section index: [Release and Feedback](release/README.md)
-- Alpha release checklist: [release-alpha-checklist.md](release/release-alpha-checklist.md)
-- Releasing guide: [releasing.md](release/releasing.md)
-- Alpha feedback template: [alpha-feedback-template.md](release/alpha-feedback-template.md)
-- Alpha triage process: [triage-alpha-process.md](release/triage-alpha-process.md)
-- Post-alpha roadmap: [post-alpha-roadmap.md](release/post-alpha-roadmap.md)
-- PyPI trusted publishing: [pypi-publishing.md](release/pypi-publishing.md)
-- GitHub release automation: [github-releases.md](release/github-releases.md)
+- Section index: [Publishing](release/README.md)
+- PyPI publishing: [pypi-publishing.md](release/pypi-publishing.md)
 
 ## ADR
 

@@ -33,7 +33,7 @@ flint check
 - Library quickstart: [docs/getting-started/quickstart-lib.md](docs/getting-started/quickstart-lib.md)
 - CLI quickstart: [docs/getting-started/quickstart-cli.md](docs/getting-started/quickstart-cli.md)
 - Troubleshooting: [docs/getting-started/troubleshooting-alpha.md](docs/getting-started/troubleshooting-alpha.md)
-- Release checklist: [docs/release/release-alpha-checklist.md](docs/release/release-alpha-checklist.md)
+- PyPI publishing: [docs/release/pypi-publishing.md](docs/release/pypi-publishing.md)
 
 ## Docs by Section
 
@@ -41,7 +41,7 @@ flint check
 - Reference: [docs/reference/README.md](docs/reference/README.md)
 - Dev Loop: [docs/dev-loop/README.md](docs/dev-loop/README.md)
 - Quality and Performance: [docs/quality/README.md](docs/quality/README.md)
-- Release and Feedback: [docs/release/README.md](docs/release/README.md)
+- Publishing: [docs/release/README.md](docs/release/README.md)
 - Architecture Decisions: [docs/adr/README.md](docs/adr/README.md)
 
 ## Product Scope (v1 alpha)

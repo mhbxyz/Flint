@@ -1,8 +1,8 @@
-# PyPI Trusted Publishing
+# PyPI Publishing
 
-[Project README](../../README.md) · [Docs Index](../README.md) · [Release and Feedback](README.md)
+[Project README](../../README.md) · [Docs Index](../README.md) · [Publishing](README.md)
 
-This guide documents how `flint` is published to TestPyPI and PyPI via GitHub OIDC trusted publishing.
+This guide documents the only supported publishing flow for `flint-dev`: GitHub OIDC trusted publishing to TestPyPI and PyPI via [publish.yml](../../.github/workflows/publish.yml).
 
 ## Workflows
 
@@ -17,16 +17,6 @@ This guide documents how `flint` is published to TestPyPI and PyPI via GitHub OI
   - verifies install from TestPyPI via `pipx`
   - runs smoke flow: `flint --help`, `flint new ...`, `uv sync --extra dev`, `flint test`
   - publishes to PyPI
-  - creates GitHub Release with wheel/sdist assets
-
-## Release trigger paths
-
-`publish.yml` is tag-driven. Tags are created by one of two controlled flows:
-
-1. Manual release workflow: `.github/workflows/release-manual.yml`
-2. release-please flow: `.github/workflows/release-please.yml` after release PR review/merge
-
-Both paths preserve manual approvals on protected environments (`testpypi`, `pypi`).
 
 ## One-time setup on TestPyPI and PyPI
 
@@ -54,7 +44,6 @@ Expected sequence:
 2. publish TestPyPI
 3. install smoke from TestPyPI
 4. publish PyPI
-5. create GitHub Release
 
 ## Troubleshooting
 
@@ -64,7 +53,4 @@ Expected sequence:
 
 ## See Also
 
-- [Release and Feedback index](README.md)
-- [Releasing Flint](releasing.md)
-- [Alpha release checklist](release-alpha-checklist.md)
-- [GitHub release automation](github-releases.md)
+- [Publishing index](README.md)

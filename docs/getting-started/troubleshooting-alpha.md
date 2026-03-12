@@ -109,7 +109,7 @@ Fix:
 
 ## Still blocked?
 
-Report with [Alpha feedback template](../release/alpha-feedback-template.md) so maintainers can reproduce quickly.
+Report the issue on GitHub with reproduction steps so maintainers can reproduce quickly.
 
 ## See Also
 
