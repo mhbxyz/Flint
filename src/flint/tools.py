@@ -94,5 +94,5 @@ def ensure_uv_available(tool_name: str, cwd: Path) -> None:
     if completed.returncode != 0:
         raise tooling_error(
             f"Required tool `{tool_name}` is not available.",
-            "Install project dev dependencies with `uv sync --extra dev` and retry.",
+            "Install project dev dependencies with `uv sync --extra dev` and confirm Flint was installed with `pipx`.",
         )

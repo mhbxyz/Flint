@@ -183,7 +183,7 @@ def discover_app_module(root: Path) -> str:
 
     raise config_error(
         "Could not resolve an ASGI app target.",
-        "Add `flint.toml` with `[app].module = 'package.main:app'` or follow the default src layout.",
+        "Add `flint.toml` with `[app].module = 'package.main:app'`, use `src/<package>/main.py`, or use a flat `main.py` layout.",
     )
 
 

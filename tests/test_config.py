@@ -18,6 +18,15 @@ def test_load_project_settings_uses_conventions(tmp_path: Path) -> None:
     assert settings.typecheck is False
 
 
+def test_load_project_settings_supports_flat_layout(tmp_path: Path) -> None:
+    (tmp_path / "main.py").write_text("app = object()\n")
+
+    settings = load_project_settings(tmp_path)
+
+    assert settings.app_module == "main:app"
+    assert tmp_path.resolve() in settings.watch_paths
+
+
 def test_load_flint_config_reads_overrides(tmp_path: Path) -> None:
     (tmp_path / "flint.toml").write_text(
         """

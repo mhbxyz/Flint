@@ -6,6 +6,7 @@
 
 - Purpose: start the project's canonical ASGI app
 - Resolution order: `flint.toml`, then repo conventions
+- Output: prints the resolved app target before launching the server
 - Success: starts the app process and exits `0` when it ends cleanly
 - Failure:
   - exit `2` for invalid config or unresolved app target
@@ -15,6 +16,7 @@
 
 - Purpose: start the app plus a watch-driven validation loop
 - Behavior:
+  - prints the resolved app target once at startup
   - starts the ASGI app without nested framework reloaders
   - restarts the app on source or config changes
   - reruns checks on source, test, or config changes
@@ -50,3 +52,10 @@ The primary supported repo shape for v1 hardening is:
 - `tests/`
 - `pyproject.toml`
 - optional `flint.toml`
+
+Additionally verified in the next trial phase:
+
+- flat `main.py`
+- exported `app`
+- `tests/`
+- `pyproject.toml`

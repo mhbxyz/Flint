@@ -49,3 +49,14 @@ def test_run_command_uses_config_override_module(tmp_path: Path) -> None:
     assert result.exit_code == 0
     command = run_mock.call_args.args[0]
     assert command[:4] == ["uv", "run", "uvicorn", "demo_api.main:app"]
+
+
+def test_run_command_prints_resolved_target(tmp_path: Path) -> None:
+    project = copy_fixture(tmp_path, "flat_fastapi_sample")
+
+    with patch("flint.tools.ensure_uv_available"), patch("flint.tools.subprocess.run") as run_mock:
+        run_mock.return_value.returncode = 0
+        result = runner.invoke(app, ["run", "--cwd", str(project)])
+
+    assert result.exit_code == 0
+    assert "App target: main:app" in result.stdout

@@ -25,6 +25,17 @@ flint dev
 flint check
 ```
 
+## Install
+
+Flint is intended to be installed with `pipx`, while project execution stays delegated to `uv`.
+
+```bash
+pipx install .
+uv --version
+```
+
+See [docs/getting-started/install.md](/home/mhbxyz/Projects/Flint/docs/getting-started/install.md) for the full setup path.
+
 ## Conventions
 
 Flint resolves the ASGI app using these conventions, in order:
@@ -45,6 +56,13 @@ The canonical repo shape Flint optimizes for is:
 - `pyproject.toml`
 - optional `flint.toml`
 
+Flint also validates one adjacent supported layout:
+
+- flat `main.py`
+- exported ASGI object named `app`
+- `tests/`
+- `pyproject.toml`
+
 ## Runtime Contract
 
 - `flint run` uses `uv run uvicorn <module>:app --reload`
@@ -53,3 +71,4 @@ The canonical repo shape Flint optimizes for is:
 - missing required tools fail fast with a Flint error and a recovery hint
 
 See [docs/reference/command-contract-v1.md](/home/mhbxyz/Projects/Flint/docs/reference/command-contract-v1.md) for the command contract.
+Use [docs/getting-started/quickstart.md](/home/mhbxyz/Projects/Flint/docs/getting-started/quickstart.md) for the first end-to-end trial flow.

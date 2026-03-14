@@ -28,6 +28,7 @@ def run(cwd: Path = typer.Option(Path.cwd(), "--cwd", help="Project root to oper
     """Start the project's ASGI app."""
     try:
         settings = load_project_settings(cwd)
+        typer.echo(f"App target: {settings.app_module}")
         exit_code = run_foreground(build_run_command(settings, reload_enabled=True), settings.root)
     except FlintError as exc:
         _handle_error(exc)
@@ -39,6 +40,7 @@ def dev(cwd: Path = typer.Option(Path.cwd(), "--cwd", help="Project root to oper
     """Start the app and watch-driven checks."""
     try:
         settings = load_project_settings(cwd)
+        typer.echo(f"App target: {settings.app_module}")
         exit_code = run_dev_loop(settings)
     except FlintError as exc:
         _handle_error(exc)
